@@ -9,9 +9,9 @@ export class ZoomRangePageComponent {
 
   @ViewChild('map') divMap?: ElementRef;
 
-  public zoom: number = 10;
+  public zoom: number = 7;
   public map?: Map;
-  public currentLngLat: LngLat = new LngLat(-6.969000947698021, 37.187031403250074);
+  public currentLngLat: LngLat = new LngLat(-5.98, 37.38);
 
   ngAfterViewInit(): void {
 

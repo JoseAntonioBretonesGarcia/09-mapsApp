@@ -5,22 +5,16 @@ No usar directamente en AngularCLI (a menos que estén creadas las variables de 
 # Pasos
 
 1. Clonar el .env.template y renombrarlo a .env
-2. Llenar las variables de entorno acorde
-3. Crear Angular Envs (Opcional)
+2. Llenar las variables de entorno acorde con un token válido de la librería Mapbox
 
-```
-npm run envs
-
-```
-
-4. Para development ejecutar:
+3. Para development ejecutar:
 
 ```
 npm run start
 
 ```
 
-5. Para producción ejecutar
+4. Para producción ejecutar
 
 ```
 npm run build

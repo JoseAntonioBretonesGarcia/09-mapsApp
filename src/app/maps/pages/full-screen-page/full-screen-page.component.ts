@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
-import {Map} from 'mapbox-gl';
+import {Map, Marker} from 'mapbox-gl';
  
 
 @Component({
@@ -16,12 +16,20 @@ export class FullScreenPAgeComponent implements AfterViewInit{
 
     if(!this.divMap) throw 'El elemento HTML no fue encontrado';
 
+    const coordsFavouritePlace = localStorage.getItem('coordsFavouritePlace') ?? "[-5.98,37.38]";
+    console.log(coordsFavouritePlace)
+    const lngLat = JSON.parse(coordsFavouritePlace);
+
     const map = new Map({
       container: this.divMap.nativeElement, // container ID
       style: 'mapbox://styles/mapbox/streets-v12', // style URL
-      center: [-74.5, 40], // starting position [lng, lat]
-      zoom: 9, // starting zoom
+      center: lngLat, // starting position [lng, lat]
+      zoom: 12, // starting zoom
     });
+
+    const marker = new Marker({ color:'red', draggable: true })
+    .setLngLat(lngLat)
+    .addTo(map);
   }
 
 }

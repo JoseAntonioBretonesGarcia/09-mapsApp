@@ -13,8 +13,8 @@
     <div class="col">
         <div class="row">
             <!-- Houses -->
-            <div *ngFor="let house of houses" class="col-4 mb-2">
-                <div class="card">
+            <div (click)="favouritePlaceChoosed(house.lngLat)" *ngFor="let house of houses" class="col-4 mb-2">
+                <div class="card" style="cursor: pointer;">
                    <!--  <img src="" class="card-img-top"> -->
                    <app-mini-map [lngLat]="house.lngLat"></app-mini-map>
 
